@@ -155,4 +155,55 @@ if location == (None, None):
 fonte: https://github.com/osm-quality/wikibrain/blob/master/wikibrain/wikimedia_link_issue_reporter.py
 
 # Execução de Exemplos:
+Exemplo 1:
+```Haskell
+func :: [(String, Int)] -> [String]
+func ss = map (\(w, n) -> replicate (min 10 n) '#' ++ " " ++ w) ss
+```
+![ex1](https://github.com/elc117/apresentacao-bim1-2026a-EmanuelCristo/blob/main/Screencast%202026-03-23%2013_56_02.gif)  
+fonte: https://liascript.github.io/course/?https://raw.githubusercontent.com/AndreaInfUFSM/elc117-2026a/main/classes/06/README.md#8
 
+Exemplo 2:
+```Haskell
+criarBD :: [String] -> [String] -> [(String, String)]
+criarBD codigos titulos = zip codigos titulos
+```
+![ex2](https://github.com/elc117/apresentacao-bim1-2026a-EmanuelCristo/blob/main/Screencast-2026-03-23-14_25_57-_online-video-cutter.com_.gif)
+
+Exemplo 3:
+```Haskell
+inverterLivro :: (String, String) -> (String, String)
+inverterLivro par = (snd par, fst par)
+```
+![ex3](https://github.com/elc117/apresentacao-bim1-2026a-EmanuelCristo/blob/main/Screencast-2026-03-23-14_31_02-_online-video-cutter.com_.gif)
+
+# Referências
+Haskell:  
+https://haskell.tailorfontela.com.br/starting-out  
+  
+https://www.facom.ufu.br/~madriana/PF/pratica01.pdf  
+  
+https://www.facom.ufu.br/~madriana/PF/Haskell3.pdf  
+
+https://liascript.github.io/course/?https://raw.githubusercontent.com/AndreaInfUFSM/elc117-2026a/main/classes/06/README.md#8
+
+Python:  
+https://www.alura.com.br/artigos/conhecendo-as-tuplas-no-python?srsltid=AfmBOoqvLwAoIbPg7sqO1zRyzNpg6BvnpHaIM9TuVapi6VDuNdKjcKm9  
+  
+https://ead06.proj.ufsm.br/pluginfile.php/5589397/mod_resource/content/0/Python3.pdf  
+  
+https://github.com/osm-quality/wikibrain/blob/master/wikibrain/wikimedia_link_issue_reporter.py
+
+C#:  
+https://learn.microsoft.com/pt-br/dotnet/api/system.tuple?view=net-10.0  
+  
+https://learn.microsoft.com/pt-br/dotnet/csharp/fundamentals/types/anonymous-types  
+  
+https://balta.io/blog/csharp-tuple  
+
+TypeScript:  
+https://www.typescriptlang.org/docs/handbook/release-notes/typescript-3-0.html#tuples-in-rest-parameters-and-spread-expressions  
+  
+https://www.typescriptlang.org  
+
+https://www.dio.me/articles/tuplas
