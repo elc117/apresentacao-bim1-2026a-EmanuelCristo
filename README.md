@@ -43,6 +43,8 @@ Características: imutável e o acesso aos elementos é feito através de índic
 
 *`len(tupla)`: Retorna o número de elementos.
 
+*`namedtuple()`: Retorna um objeto de uma subclasse de tupla que, além de darem acesso aos elementos pelo índice, nos permitem dar significado nomeado para cada um deles e acessá-los
+
 ---
 ## C#: Nessa linguagem existe dois "tipos" de tuplas:  
 #### A classe `Tuple` (maneira "antiga"), sendo uma **classe de referência**
@@ -51,7 +53,7 @@ var tupla = new Tuple<string, String, int>("Exemplo", "Tupla", 1);
 ```
 Ou
 ```C#
-var tupla = Tuple.Create("Exemplo", "Tupla", 1);
+var tupla = Tuple.Create("Exemplo", "Tupla", 2);
 ```
 Caracteristicas: imutável, alocação na **Heap** e o acesso a emelentos é feito apenas unsando `.Item1`, `.Item2`, etc.  
 
@@ -103,3 +105,54 @@ de nascimento. Desta forma, a tupla é formada por valores de tipos diferentes:
 maria :: (String, String, String, Int)
 maria = ( "Maria Silva", "222-2222", "Rua A, 35", 1998)
 ```
+Exemplo Biblioteca (Haskell)
+```Haskell
+type Data = (Int, Int, Int)
+type Livro = (String, String, String, String, Int) -- Código, Título, Autor, Editora, Ano
+type Pessoa = (String, String, String, String)     -- Identificação, Nome, E-mail, Telefone
+type Emprestimo = (String, String, Data, Data, String) -- Cód_Livro, Ident_Pessoa, Início, Fim, Situação
+
+type Livros = [Livro]
+type Pessoas = [Pessoa]
+type Emprestimos = [Emprestimo]
+
+bdLivro :: Livros
+bdLivro = [ ("H123C9", "Haskell", "Thompson", "Pearson", 1999)
+          , ("H214C5", "Haskell", "Sá", "Novatec", 2006)
+          , ("S612C1", "SGBD", "Ramakrishnan", "McGraw-Hill", 2008)
+          , ("L433C5", "Linguagens", "Tucker", "McGraw-Hill", 2009) ]
+
+bdPessoa :: Pessoas
+bdPessoa = [ ("BSI945", "Ana Silva", "ana@email", "3322-1122")
+           , ("BCC021", "Antonio Matos", "ant@email", "1122-1100")
+           , ("BSI030", "Augusto Melo", "aug@email", "1234-1234") ]
+
+bdEmprestimo :: Emprestimos
+bdEmprestimo = [ ("H123C9", "BSI945", (12,9,2009), (20,9,2009), "aberto")
+               , ("L433C5", "BCC021", (01,9,2009), (10,9,2009), "encerrado") ]
+
+-- Usando Pattern Matching para pegar apenas o segundo elemento (Título)
+getTitulo :: Livro -> String
+getTitulo (_, titulo, _, _, _) = titulo
+```
+fonte: https://www.facom.ufu.br/~madriana/PF/Haskell3.pdf
+
+Exemplo WikiBrain (Python)
+```Python
+def get_location(self, headquarters):
+    try:
+        position = headquarters['value']
+        # Retorna uma tupla (latitude, longitude)
+        return (position['latitude'], position['longitude'])
+    except KeyError:
+        # Retorna uma tupla de nulos em caso de erro
+        return (None, None)
+
+# Comparação direta de tuplas
+if location == (None, None):
+    print("Localização não encontrada")
+```
+fonte: https://github.com/osm-quality/wikibrain/blob/master/wikibrain/wikimedia_link_issue_reporter.py
+
+# Execução de Exemplos:
+
